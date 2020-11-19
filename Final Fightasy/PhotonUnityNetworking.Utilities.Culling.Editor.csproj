@@ -263,26 +263,26 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="DDebug">
+      <HintPath>D:/Photon-Game/Final Fightasy/Assets/Doozy/Engine/Debug/DDebug.dll</HintPath>
+    </Reference>
     <Reference Include="Photon3Unity3D">
       <HintPath>D:/Photon-Game/Final Fightasy/Assets/Photon/PhotonLibs/Photon3Unity3D.dll</HintPath>
     </Reference>
     <Reference Include="websocket-sharp">
       <HintPath>D:/Photon-Game/Final Fightasy/Assets/Photon/PhotonLibs/WebSocket/websocket-sharp.dll</HintPath>
     </Reference>
+    <Reference Include="DOTween">
+      <HintPath>D:/Photon-Game/Final Fightasy/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTweenEditor">
+      <HintPath>D:/Photon-Game/Final Fightasy/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>D:/Photon-Game/Final Fightasy/Library/PackageCache/com.unity.ext.nunit@1.0.5/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.NRefactory">
       <HintPath>D:/Photon-Game/Final Fightasy/Library/PackageCache/com.unity.render-pipelines.core@7.3.1/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTweenEditor">
-      <HintPath>D:/Photon-Game/Final Fightasy/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween">
-      <HintPath>D:/Photon-Game/Final Fightasy/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
-    </Reference>
-    <Reference Include="DDebug">
-      <HintPath>D:/Photon-Game/Final Fightasy/Assets/Doozy/Engine/Debug/DDebug.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>D:/Programs/Unity/2019.4.11f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
