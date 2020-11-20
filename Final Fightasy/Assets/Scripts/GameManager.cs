@@ -62,7 +62,7 @@ namespace Com.GIMM.FinalFightasy
                 if (PlayerManager.LocalPlayerInstance == null)
                 {
                     Debug.LogFormat("We are Instantiating LocalPlayer from {0}", SceneManagerHelper.ActiveSceneName);
-                    PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, 5f, 0f), Quaternion.identity, 0);
+                    PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, 0f, 0f), Quaternion.identity, 0);
                 }
                 else
                 {
