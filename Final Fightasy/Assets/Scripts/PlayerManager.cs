@@ -7,24 +7,6 @@ namespace Com.GIMM.FinalFightasy
 {
     public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
     {
-        #region IPunObservable implementation
-
-        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-        {
-            if (stream.IsWriting)
-            {
-                stream.SendNext(IsFiring);
-                stream.SendNext(Health);
-            }
-            else
-            {
-                this.IsFiring = (bool)stream.ReceiveNext();
-                this.Health = (float)stream.ReceiveNext();
-            }
-        }
-
-        #endregion
-
         #region Private Fields
 
         [Tooltip("The Beams GameObject to control")]
@@ -40,6 +22,24 @@ namespace Com.GIMM.FinalFightasy
         public float Health = 1f;
         [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
         public static GameObject LocalPlayerInstance;
+
+        #endregion
+
+        #region IPunObservable implementation
+
+        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+        {
+            if (stream.IsWriting)
+            {
+                stream.SendNext(IsFiring);
+                stream.SendNext(Health);
+            }
+            else
+            {
+                this.IsFiring = (bool)stream.ReceiveNext();
+                this.Health = (float)stream.ReceiveNext();
+            }
+        }
 
         #endregion
 
