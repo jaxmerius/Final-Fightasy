@@ -417,10 +417,13 @@
     <Compile Include="Assets\Scripts\BarbarianSFXManager.cs" />
     <Compile Include="Assets\Scripts\BarbarianVoiceManager.cs" />
     <Compile Include="Assets\Scripts\CameraWork.cs" />
+    <Compile Include="Assets\Scripts\ChangeScene.cs" />
     <Compile Include="Assets\Scripts\Launcher.cs" />
     <Compile Include="Assets\Scripts\PlayerNameInputField.cs" />
     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
+    <Compile Include="Assets\Scripts\WitchSFXManager.cs" />
     <Compile Include="Assets\Scripts\WitchSoundManager.cs" />
+    <Compile Include="Assets\Scripts\WitchVoiceManager.cs" />
     <Compile Include="Assets\VRM\DepthFirstScheduler\Functor.cs" />
     <Compile Include="Assets\VRM\DepthFirstScheduler\IEnumeratorExtensions.cs" />
     <Compile Include="Assets\VRM\DepthFirstScheduler\LockQueue.cs" />
@@ -1378,6 +1381,10 @@
     <ProjectReference Include="PhotonUnityNetworking.csproj">
       <Project>{29844971-83D8-B29B-FD13-8C9FCECB3481}</Project>
       <Name>PhotonUnityNetworking</Name>
+    </ProjectReference>
+    <ProjectReference Include="ThirteenPixels.GitMerge.csproj">
+      <Project>{EF908FE4-0075-D0D6-791A-C4BC41E370BB}</Project>
+      <Name>ThirteenPixels.GitMerge</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.UniversalToonShader.Urp.Editor.csproj">
       <Project>{3A01749B-1DCE-90BE-1097-215BFD9AFBFF}</Project>

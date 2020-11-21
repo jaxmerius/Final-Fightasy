@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotonWebSocket", "PhotonWe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{6B668514-9D12-18CE-1F06-E13FE4E7B9E6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThirteenPixels.GitMerge", "ThirteenPixels.GitMerge.csproj", "{EF908FE4-0075-D0D6-791A-C4BC41E370BB}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotonUnityNetworking.Editor", "PhotonUnityNetworking.Editor.csproj", "{C02369B6-6B4A-C4A3-E1BA-1A43DF40009A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.UniversalToonShader.Urp.Editor", "Unity.UniversalToonShader.Urp.Editor.csproj", "{3A01749B-1DCE-90BE-1097-215BFD9AFBFF}"
@@ -73,6 +75,10 @@ Global
 		{6B668514-9D12-18CE-1F06-E13FE4E7B9E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B668514-9D12-18CE-1F06-E13FE4E7B9E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B668514-9D12-18CE-1F06-E13FE4E7B9E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF908FE4-0075-D0D6-791A-C4BC41E370BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF908FE4-0075-D0D6-791A-C4BC41E370BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF908FE4-0075-D0D6-791A-C4BC41E370BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF908FE4-0075-D0D6-791A-C4BC41E370BB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C02369B6-6B4A-C4A3-E1BA-1A43DF40009A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C02369B6-6B4A-C4A3-E1BA-1A43DF40009A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C02369B6-6B4A-C4A3-E1BA-1A43DF40009A}.Release|Any CPU.ActiveCfg = Release|Any CPU

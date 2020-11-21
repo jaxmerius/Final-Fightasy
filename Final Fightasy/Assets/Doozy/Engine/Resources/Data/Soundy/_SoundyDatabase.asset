@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: _SoundyDatabase
   m_EditorClassIdentifier: 
   DatabaseNames:
+  - Announcer
   - Example Alerts
   - Example Clicks
   - Example Music
@@ -24,3 +25,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d6efd9700ef4c504f997ee462880e61e, type: 2}
   - {fileID: 11400000, guid: f357811014801dc489af9b0c14c815e3, type: 2}
   - {fileID: 11400000, guid: 1c9962c920bc6c04cabebba7c9570070, type: 2}
+  - {fileID: 11400000, guid: 585779add4e3bc747bb3c7f4605a3e19, type: 2}
