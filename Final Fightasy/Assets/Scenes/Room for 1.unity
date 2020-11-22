@@ -152,7 +152,7 @@ PrefabInstance:
     - target: {fileID: 1779875788857231905, guid: de77748faebeec24294248d010f637dc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 1779875788857231905, guid: de77748faebeec24294248d010f637dc,
         type: 3}
@@ -476,6 +476,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -542,12 +543,43 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 1.25, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &1726828821
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,7 +613,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -209.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &6087273515197427628
@@ -651,24 +683,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 6087273514838743675, guid: d9a4db69a26e3734a9c7f95871b77dc5,
-        type: 3}
-      propertyPath: playerPrefab
-      value: 
-      objectReference: {fileID: 4194454434704234554, guid: c1adf5da9b1c33649ab20e29afff6f27,
-        type: 3}
-    - target: {fileID: 6087273514838743675, guid: d9a4db69a26e3734a9c7f95871b77dc5,
-        type: 3}
-      propertyPath: barbarianPrefab
-      value: 
-      objectReference: {fileID: 4194454434704234554, guid: c1adf5da9b1c33649ab20e29afff6f27,
-        type: 3}
-    - target: {fileID: 6087273514838743675, guid: d9a4db69a26e3734a9c7f95871b77dc5,
-        type: 3}
-      propertyPath: witchPrefab
-      value: 
-      objectReference: {fileID: 4853626473710615070, guid: a3a9f6415e0af9b419f7c243ea0e053a,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9a4db69a26e3734a9c7f95871b77dc5, type: 3}
 --- !u!1001 &9114550915332244375
@@ -746,17 +760,17 @@ PrefabInstance:
     - target: {fileID: 9114550915106593387, guid: b8cbb91b0ac5e7d4ba9b26e225911b4f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -1025
       objectReference: {fileID: 0}
     - target: {fileID: 9114550915106593387, guid: b8cbb91b0ac5e7d4ba9b26e225911b4f,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 160
+      value: 320
       objectReference: {fileID: 0}
     - target: {fileID: 9114550915106593387, guid: b8cbb91b0ac5e7d4ba9b26e225911b4f,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 30
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 9114550915106593387, guid: b8cbb91b0ac5e7d4ba9b26e225911b4f,
         type: 3}

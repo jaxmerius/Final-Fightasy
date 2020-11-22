@@ -1846,14 +1846,13 @@ GameObject:
   - component: {fileID: 5736145968932243284}
   - component: {fileID: 5736145968932243273}
   - component: {fileID: 5736145968932243274}
-  - component: {fileID: 5736145968932243285}
   - component: {fileID: 1974066568981357081}
   - component: {fileID: 5599697290079655314}
   - component: {fileID: 4271157742922578290}
   - component: {fileID: -1054477741882974997}
   - component: {fileID: -3272623048786379312}
   - component: {fileID: -1649503177981619042}
-  - component: {fileID: 3486567295306221537}
+  - component: {fileID: -1066115791325856607}
   m_Layer: 0
   m_Name: Witch
   m_TagString: Untagged
@@ -2106,18 +2105,6 @@ MonoBehaviour:
   special: {fileID: 8300000, guid: dbfe7f255a2881445863c2643f85a421, type: 3}
   guard: {fileID: 8300000, guid: d58f8d3a374e1184da6941c7fda9e5bb, type: 3}
   jab: {fileID: 8300000, guid: 0f0c8772d1a9c25479dfd7972e3090ef, type: 3}
---- !u!114 &5736145968932243285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4853626473710615070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13a5ace5824394247b4b63466c9510be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1974066568981357081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2183,6 +2170,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: -1054477741882974997}
   - {fileID: -1649503177981619042}
+  - {fileID: -1066115791325856607}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -2198,8 +2186,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22692d91b3794dc428835cf0b6a5ef32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beams: {fileID: 152888, guid: 5624ee9da9d10514ea7b808e83979c85, type: 3}
-  Health: 1
+  Health: 850
+  PlayerUiPrefab: {fileID: 496418754644031354, guid: b67852effb886f444bb5c230d0dc7809,
+    type: 3}
 --- !u!114 &-3272623048786379312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2229,30 +2218,30 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 9
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: Walk
   - Type: 9
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: Idle
   - Type: 9
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: Jab
   - Type: 9
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: Guard
   - Type: 9
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: Special
   - Type: 9
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: Power
   - Type: 9
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: Charge
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
---- !u!114 &3486567295306221537
+--- !u!114 &-1066115791325856607
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2261,14 +2250,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4853626473710615070}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb437b72c1301424fbc916291113fabe, type: 3}
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 7
-  height: 3
-  centerOffset: {x: 0, y: 0, z: 0}
-  followOnStart: 0
-  smoothSpeed: 0.125
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
 --- !u!1 &4894674638574597853
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ namespace Com.GIMM.FinalFightasy
         #region Public Fields
 
         public static GameManager Instance;
-        public string character = "witch";
+        public string character;
 
         [Tooltip("These prefabs are used for representing the player")]
         public GameObject barbarianPrefab;
@@ -65,7 +65,14 @@ namespace Com.GIMM.FinalFightasy
                 if (PlayerManager.LocalPlayerInstance == null && character == "barbarian")
                 {
                     Debug.LogFormat("We are Instantiating LocalPlayer from {0}", SceneManagerHelper.ActiveSceneName);
-                    PhotonNetwork.Instantiate(this.barbarianPrefab.name, new Vector3(0f, 0f, 0f), Quaternion.identity, 0);
+                    if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
+                    {
+                        PhotonNetwork.Instantiate(this.barbarianPrefab.name, new Vector3(-4f, 0f, 0f), Quaternion.Euler(0, 90, 0), 0);
+                    }
+                    else if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
+                    {
+                        PhotonNetwork.Instantiate(this.barbarianPrefab.name, new Vector3(4f, 0f, 0f), Quaternion.Euler(0, -90, 0), 0);
+                    }
                 }
                 else if (PlayerManager.LocalPlayerInstance == null && character == "witch")
                 {

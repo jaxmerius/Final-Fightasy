@@ -32,96 +32,100 @@ namespace Com.GIMM.FinalFightasy
 
         void Update()
         {
-            if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
+            if (!photonView.IsMine && PhotonNetwork.IsConnected)
             {
                 return;
             }
+            else if (photonView.IsMine && PhotonNetwork.IsConnected)
+            {
+                if (!animator)
+                {
+                    return;
+                }
+                else
+                {
+                    Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+                    controller.Move(move * Time.deltaTime * playerSpeed);
 
-            if (!animator)
-            {
-                return;
-            }
+                    if (move != Vector3.zero)
+                    {
+                        gameObject.transform.forward = move;
+                    }
 
-            Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
-            controller.Move(move * Time.deltaTime * playerSpeed);
+                    if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))
+                    {
+                        animator.ResetTrigger("Idle");
+                        animator.SetTrigger("Walk");
+                        animator.ResetTrigger("Jab");
+                        animator.ResetTrigger("Special");
+                        animator.ResetTrigger("Charge");
+                        animator.ResetTrigger("Power");
+                        animator.ResetTrigger("Guard");
+                    }
+                    else if (Input.GetKeyDown(KeyCode.J))
+                    {
+                        animator.ResetTrigger("Idle");
+                        animator.ResetTrigger("Walk");
+                        animator.SetTrigger("Jab");
+                        animator.ResetTrigger("Special");
+                        animator.ResetTrigger("Charge");
+                        animator.ResetTrigger("Power");
+                        animator.ResetTrigger("Guard");
+                    }
+                    else if (Input.GetKeyDown(KeyCode.K))
+                    {
+                        animator.ResetTrigger("Idle");
+                        animator.ResetTrigger("Walk");
+                        animator.ResetTrigger("Jab");
+                        animator.SetTrigger("Special");
+                        animator.ResetTrigger("Charge");
+                        animator.ResetTrigger("Power");
+                        animator.ResetTrigger("Guard");
+                    }
+                    else if (Input.GetKey(KeyCode.L))
+                    {
+                        animator.ResetTrigger("Idle");
+                        animator.ResetTrigger("Walk");
+                        animator.ResetTrigger("Jab");
+                        animator.ResetTrigger("Special");
+                        animator.SetTrigger("Charge");
+                        animator.ResetTrigger("Power");
+                        animator.ResetTrigger("Guard");
+                    }
+                    else if (Input.GetKeyUp(KeyCode.L))
+                    {
+                        animator.ResetTrigger("Idle");
+                        animator.ResetTrigger("Walk");
+                        animator.ResetTrigger("Jab");
+                        animator.ResetTrigger("Special");
+                        animator.ResetTrigger("Charge");
+                        animator.SetTrigger("Power");
+                        animator.ResetTrigger("Guard");
+                    }
+                    else if (Input.GetKey(KeyCode.E))
+                    {
+                        animator.ResetTrigger("Idle");
+                        animator.ResetTrigger("Walk");
+                        animator.ResetTrigger("Jab");
+                        animator.ResetTrigger("Special");
+                        animator.ResetTrigger("Charge");
+                        animator.ResetTrigger("Power");
+                        animator.SetTrigger("Guard");
+                    }
+                    else
+                    {
+                        animator.SetTrigger("Idle");
+                        animator.ResetTrigger("Walk");
+                        animator.ResetTrigger("Jab");
+                        animator.ResetTrigger("Special");
+                        animator.ResetTrigger("Charge");
+                        animator.ResetTrigger("Power");
+                        animator.ResetTrigger("Guard");
+                    }
 
-            if (move != Vector3.zero)
-            {
-                gameObject.transform.forward = move;
+                    AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+                }
             }
-
-            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))
-            {
-                animator.ResetTrigger("Idle");
-                animator.SetTrigger("Walk");
-                animator.ResetTrigger("Jab");
-                animator.ResetTrigger("Special");
-                animator.ResetTrigger("Charge");
-                animator.ResetTrigger("Power");
-                animator.ResetTrigger("Guard");
-            }
-            else if (Input.GetKeyDown(KeyCode.J))
-            {
-                animator.ResetTrigger("Idle");
-                animator.ResetTrigger("Walk");
-                animator.SetTrigger("Jab");
-                animator.ResetTrigger("Special");
-                animator.ResetTrigger("Charge");
-                animator.ResetTrigger("Power");
-                animator.ResetTrigger("Guard");
-            }
-            else if (Input.GetKeyDown(KeyCode.K))
-            {
-                animator.ResetTrigger("Idle");
-                animator.ResetTrigger("Walk");
-                animator.ResetTrigger("Jab");
-                animator.SetTrigger("Special");
-                animator.ResetTrigger("Charge");
-                animator.ResetTrigger("Power");
-                animator.ResetTrigger("Guard");
-            }
-            else if (Input.GetKey(KeyCode.L))
-            {
-                animator.ResetTrigger("Idle");
-                animator.ResetTrigger("Walk");
-                animator.ResetTrigger("Jab");
-                animator.ResetTrigger("Special");
-                animator.SetTrigger("Charge");
-                animator.ResetTrigger("Power");
-                animator.ResetTrigger("Guard");
-            }
-            else if (Input.GetKeyUp(KeyCode.L))
-            {
-                animator.ResetTrigger("Idle");
-                animator.ResetTrigger("Walk");
-                animator.ResetTrigger("Jab");
-                animator.ResetTrigger("Special");
-                animator.ResetTrigger("Charge");
-                animator.SetTrigger("Power");
-                animator.ResetTrigger("Guard");
-            }
-            else if (Input.GetKey(KeyCode.E))
-            {
-                animator.ResetTrigger("Idle");
-                animator.ResetTrigger("Walk");
-                animator.ResetTrigger("Jab");
-                animator.ResetTrigger("Special");
-                animator.ResetTrigger("Charge");
-                animator.ResetTrigger("Power");
-                animator.SetTrigger("Guard");
-            }
-            else
-            {
-                animator.SetTrigger("Idle");
-                animator.ResetTrigger("Walk");
-                animator.ResetTrigger("Jab");
-                animator.ResetTrigger("Special");
-                animator.ResetTrigger("Charge");
-                animator.ResetTrigger("Power");
-                animator.ResetTrigger("Guard");
-            }
-
-            AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
         }
 
         #endregion

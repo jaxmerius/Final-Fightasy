@@ -389,14 +389,13 @@
      <Compile Include="Assets\Scripts\AnimationTrigger.cs" />
      <Compile Include="Assets\Scripts\BarbarianSFXManager.cs" />
      <Compile Include="Assets\Scripts\BarbarianVoiceManager.cs" />
-     <Compile Include="Assets\Scripts\CameraWork.cs" />
      <Compile Include="Assets\Scripts\ChangeScene.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Launcher.cs" />
      <Compile Include="Assets\Scripts\PlayerAnimatorManager.cs" />
      <Compile Include="Assets\Scripts\PlayerManager.cs" />
      <Compile Include="Assets\Scripts\PlayerNameInputField.cs" />
-     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
+     <Compile Include="Assets\Scripts\PlayerUI.cs" />
      <Compile Include="Assets\Scripts\WitchSFXManager.cs" />
      <Compile Include="Assets\Scripts\WitchSoundManager.cs" />
      <Compile Include="Assets\Scripts\WitchVoiceManager.cs" />

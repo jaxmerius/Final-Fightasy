@@ -43,3 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d11146d0296288b48a40cee813b1d745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: barbarian
+  barbarianPrefab: {fileID: 4194454434704234554, guid: c1adf5da9b1c33649ab20e29afff6f27,
+    type: 3}
+  witchPrefab: {fileID: 4853626473710615070, guid: a3a9f6415e0af9b419f7c243ea0e053a,
+    type: 3}
