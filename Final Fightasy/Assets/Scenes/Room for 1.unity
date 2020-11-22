@@ -657,6 +657,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4194454434704234554, guid: c1adf5da9b1c33649ab20e29afff6f27,
         type: 3}
+    - target: {fileID: 6087273514838743675, guid: d9a4db69a26e3734a9c7f95871b77dc5,
+        type: 3}
+      propertyPath: barbarianPrefab
+      value: 
+      objectReference: {fileID: 4194454434704234554, guid: c1adf5da9b1c33649ab20e29afff6f27,
+        type: 3}
+    - target: {fileID: 6087273514838743675, guid: d9a4db69a26e3734a9c7f95871b77dc5,
+        type: 3}
+      propertyPath: witchPrefab
+      value: 
+      objectReference: {fileID: 4853626473710615070, guid: a3a9f6415e0af9b419f7c243ea0e053a,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9a4db69a26e3734a9c7f95871b77dc5, type: 3}
 --- !u!1001 &9114550915332244375
