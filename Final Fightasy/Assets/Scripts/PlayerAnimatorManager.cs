@@ -15,12 +15,23 @@ namespace Com.GIMM.FinalFightasy
         private Animator animator;
         private float playerSpeed = 2.0f;
 
+        private string whichPlayer;
+
         #endregion
 
         #region MonoBehaviour Callbacks
 
         void Start()
         {
+            if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
+            {
+                whichPlayer = "1";
+            }
+            else if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
+            {
+                whichPlayer = "2";
+            }
+
             animator = GetComponent<Animator>();
             controller = GetComponent<CharacterController>();
 
@@ -71,6 +82,18 @@ namespace Com.GIMM.FinalFightasy
                         animator.ResetTrigger("Charge");
                         animator.ResetTrigger("Power");
                         animator.ResetTrigger("Guard");
+
+                        if (GameManager.Instance.distance < 50)
+                        {
+                            if (whichPlayer == "1")
+                            {
+                                GameManager.Instance.player2Health = GameManager.Instance.player2Health - 10;
+                            }
+                            else
+                            {
+                                GameManager.Instance.player1Health = GameManager.Instance.player1Health - 10;
+                            }
+                        }
                     }
                     else if (Input.GetKeyDown(KeyCode.K))
                     {
@@ -81,6 +104,18 @@ namespace Com.GIMM.FinalFightasy
                         animator.ResetTrigger("Charge");
                         animator.ResetTrigger("Power");
                         animator.ResetTrigger("Guard");
+
+                        if (GameManager.Instance.distance < 3)
+                        {
+                            if (whichPlayer == "1")
+                            {
+                                GameManager.Instance.player2Health = GameManager.Instance.player2Health - 15;
+                            }
+                            else
+                            {
+                                GameManager.Instance.player1Health = GameManager.Instance.player1Health - 15;
+                            }
+                        }
                     }
                     else if (Input.GetKey(KeyCode.L))
                     {
@@ -101,6 +136,18 @@ namespace Com.GIMM.FinalFightasy
                         animator.ResetTrigger("Charge");
                         animator.SetTrigger("Power");
                         animator.ResetTrigger("Guard");
+
+                        if (GameManager.Instance.distance < 3)
+                        {
+                            if (whichPlayer == "1")
+                            {
+                                GameManager.Instance.player2Health = GameManager.Instance.player2Health - 20;
+                            }
+                            else
+                            {
+                                GameManager.Instance.player1Health = GameManager.Instance.player1Health - 20;
+                            }
+                        }
                     }
                     else if (Input.GetKey(KeyCode.E))
                     {

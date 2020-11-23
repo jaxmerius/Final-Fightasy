@@ -9,12 +9,14 @@ namespace Com.GIMM.FinalFightasy
     {
         #region Private Fields
 
+        private string whichPlayer;
+
         #endregion
 
         #region Public Fields
 
         [Tooltip("The current Health of our player")]
-        public float Health = 1f;
+        public int Health = 1000;
 
         [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
         public static GameObject LocalPlayerInstance;
@@ -35,7 +37,7 @@ namespace Com.GIMM.FinalFightasy
             }
             else
             {
-                this.Health = (float)stream.ReceiveNext();
+                this.Health = (int)stream.ReceiveNext();
             }
         }
 
@@ -68,55 +70,20 @@ namespace Com.GIMM.FinalFightasy
 
         void Update()
         {
-            if (photonView.IsMine)
-            {
-                ProcessInputs();
-            }
+            //Debug.Log("Player 1 Health: " + Health);
+            //Debug.Log("Player 2 Health: " + Health);
 
             if (Health <= 0f)
             {
-                GameManager.Instance.LeaveRoom();
+                //GameManager.Instance.LeaveRoom();
+                Debug.Log("Dead");
             }
-        }
-
-        void OnTriggerEnter(Collider other)
-        {
-            if (!photonView.IsMine)
-            {
-                return;
-            }
-
-            if (!other.name.Contains("Beam"))
-            {
-                return;
-            }
-
-            Health -= 0.1f;
-        }
-
-        void OnTriggerStay(Collider other)
-        {
-            if (!photonView.IsMine)
-            {
-                return;
-            }
-
-            Health -= 0.1f * Time.deltaTime;
         }
 
         void CalledOnLevelWasLoaded()
         {
             GameObject _uiGo = Instantiate(this.PlayerUiPrefab);
             _uiGo.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
-        }
-
-        #endregion
-
-        #region Custom
-
-        void ProcessInputs()
-        {
-
         }
 
         #endregion

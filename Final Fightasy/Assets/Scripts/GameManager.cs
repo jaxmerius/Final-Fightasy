@@ -10,6 +10,18 @@ namespace Com.GIMM.FinalFightasy
 {
     public class GameManager : MonoBehaviourPunCallbacks
     {
+        #region Private Fields
+
+        private string character;
+        private GameObject player1;
+        private GameObject player2;
+        private bool isPlayer1 = false;
+        private bool isPlayer2 = false;
+        private PlayerManager player1Mananger;
+        private PlayerManager player2Mananger;
+
+        #endregion
+
         #region Public Fields
 
         public static GameManager Instance;
@@ -17,12 +29,10 @@ namespace Com.GIMM.FinalFightasy
         [Tooltip("These prefabs are used for representing the player")]
         public GameObject barbarianPrefab;
         public GameObject witchPrefab;
-
-        #endregion
-
-        #region Private Fields
-
-        private string character;
+        public float distance;
+        public int player1Health = 1000;
+        public int player2Health = 1000;
+        public GameObject newPlayer;
 
         #endregion
 
@@ -63,6 +73,28 @@ namespace Com.GIMM.FinalFightasy
             Instance = this;
         }
 
+        void Update()
+        {
+            if (isPlayer1 == true && isPlayer2 == true)
+            {
+                distance = Vector3.Distance(player1.transform.position, player2.transform.position);
+                Debug.Log("Distance: " + distance);
+
+                Debug.Log("Player 1 Health GameManager: " + player1Health);
+                Debug.Log("Player 2 Health GameManager: " + player2Health);
+
+                player1Mananger.Health = player1Health;
+                player2Mananger.Health = player2Health;
+            }
+            else if (isPlayer1 == true)
+            {
+                Debug.Log("Player 1 Health GameManager: " + player1Health);
+                player1Mananger.Health = player1Health;
+            }
+
+            //Debug.Log(player1);
+        }
+
         public void LeaveRoom()
         {
             PhotonNetwork.LeaveRoom();
@@ -84,10 +116,20 @@ namespace Com.GIMM.FinalFightasy
                     if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
                     {
                         PhotonNetwork.Instantiate(this.barbarianPrefab.name, new Vector3(-4f, 0f, 0f), Quaternion.Euler(0, 90, 0), 0);
+                        newPlayer = GameObject.Find("Barbarian(Clone)");
+                        newPlayer.name = "Player1";
+                        player1 = GameObject.Find("Player1");
+                        isPlayer1 = true;
+                        Debug.Log(isPlayer1);
+                        player1Mananger = player1.GetComponent<PlayerManager>();
                     }
                     else if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
                     {
                         PhotonNetwork.Instantiate(this.barbarianPrefab.name, new Vector3(4f, 0f, 0f), Quaternion.Euler(0, -90, 0), 0);
+                        newPlayer = GameObject.Find("Barbarian(Clone)");
+                        newPlayer.name = "Player2";
+                        player2 = GameObject.Find("Player2");
+                        player2Mananger = player2.GetComponent<PlayerManager>();
                     }
                 }
                 else if (PlayerManager.LocalPlayerInstance == null && character == "witch")
@@ -96,10 +138,18 @@ namespace Com.GIMM.FinalFightasy
                     if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
                     {
                         PhotonNetwork.Instantiate(this.witchPrefab.name, new Vector3(-4f, 0f, 0f), Quaternion.Euler(0, 90, 0), 0);
+                        newPlayer = GameObject.Find("Witch(Clone)");
+                        newPlayer.name = "Player1";
+                        player1 = GameObject.Find("Player1");
+                        player1Mananger = player1.GetComponent<PlayerManager>();
                     }
                     else if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
                     {
                         PhotonNetwork.Instantiate(this.witchPrefab.name, new Vector3(4f, 0f, 0f), Quaternion.Euler(0, -90, 0), 0);
+                        newPlayer = GameObject.Find("Witch(Clone)");
+                        newPlayer.name = "Player2";
+                        player2 = GameObject.Find("Player2");
+                        player2Mananger = player2.GetComponent<PlayerManager>();
                     }
                 }
                 else
