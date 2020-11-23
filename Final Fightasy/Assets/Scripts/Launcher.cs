@@ -11,11 +11,6 @@ namespace Com.GIMM.FinalFightasy
         [Tooltip("The Ui Panel to let the user enter name, connect and play")]
         [SerializeField]
         private GameObject controlPanel;
-        /*
-        [Tooltip("The UI Label to inform the user that the connection is in progress")]
-        [SerializeField]
-        private GameObject progressLabel;
-        */
 
         #endregion
 
@@ -44,8 +39,7 @@ namespace Com.GIMM.FinalFightasy
 
         void Start()
         {
-            //progressLabel.SetActive(false);
-            controlPanel.SetActive(true);
+
         }
 
         #endregion
@@ -54,9 +48,6 @@ namespace Com.GIMM.FinalFightasy
 
         public void Connect()
         {
-            //progressLabel.SetActive(true);
-            controlPanel.SetActive(false);
-
             if (PhotonNetwork.IsConnected)
             {
                 PhotonNetwork.JoinRandomRoom();
@@ -86,8 +77,6 @@ namespace Com.GIMM.FinalFightasy
         public override void OnDisconnected(DisconnectCause cause)
         {
             isConnecting = false;
-            //progressLabel.SetActive(false);
-            controlPanel.SetActive(true);
             Debug.LogWarningFormat("PUN Basics Tutorial/Launcher: OnDisconnected() was called by PUN with reason {0}", cause);
         }
 

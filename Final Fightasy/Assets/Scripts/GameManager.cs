@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine.EventSystems;
 
 namespace Com.GIMM.FinalFightasy
 {
@@ -12,11 +13,16 @@ namespace Com.GIMM.FinalFightasy
         #region Public Fields
 
         public static GameManager Instance;
-        public string character;
 
         [Tooltip("These prefabs are used for representing the player")]
         public GameObject barbarianPrefab;
         public GameObject witchPrefab;
+
+        #endregion
+
+        #region Private Fields
+
+        private string character;
 
         #endregion
 
@@ -55,6 +61,16 @@ namespace Com.GIMM.FinalFightasy
         void Start()
         {
             Instance = this;
+        }
+
+        public void LeaveRoom()
+        {
+            PhotonNetwork.LeaveRoom();
+        }
+
+        public void CharacterSelected()
+        {
+            character = EventSystem.current.currentSelectedGameObject.name;
 
             if (barbarianPrefab == null || witchPrefab == null)
             {
@@ -77,18 +93,20 @@ namespace Com.GIMM.FinalFightasy
                 else if (PlayerManager.LocalPlayerInstance == null && character == "witch")
                 {
                     Debug.LogFormat("We are Instantiating LocalPlayer from {0}", SceneManagerHelper.ActiveSceneName);
-                    PhotonNetwork.Instantiate(this.witchPrefab.name, new Vector3(0f, 0f, 0f), Quaternion.identity, 0);
+                    if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
+                    {
+                        PhotonNetwork.Instantiate(this.witchPrefab.name, new Vector3(-4f, 0f, 0f), Quaternion.Euler(0, 90, 0), 0);
+                    }
+                    else if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
+                    {
+                        PhotonNetwork.Instantiate(this.witchPrefab.name, new Vector3(4f, 0f, 0f), Quaternion.Euler(0, -90, 0), 0);
+                    }
                 }
                 else
                 {
                     Debug.LogFormat("Ignoring scene load for {0}", SceneManagerHelper.ActiveSceneName);
                 }
             }
-        }
-
-        public void LeaveRoom()
-        {
-            PhotonNetwork.LeaveRoom();
         }
 
         #endregion

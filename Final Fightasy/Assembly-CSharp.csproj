@@ -386,7 +386,6 @@
      <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\IgnoreUiRaycastWhenInactive.cs" />
      <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\NamePickGui.cs" />
      <Compile Include="Assets\Photon\PhotonRealtime\Demos\DemoLoadBalancing\ConnectAndJoinRandomLb.cs" />
-     <Compile Include="Assets\Scripts\AnimationTrigger.cs" />
      <Compile Include="Assets\Scripts\BarbarianSFXManager.cs" />
      <Compile Include="Assets\Scripts\BarbarianVoiceManager.cs" />
      <Compile Include="Assets\Scripts\ChangeScene.cs" />
